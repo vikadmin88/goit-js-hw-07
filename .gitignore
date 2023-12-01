@@ -1,6 +1,7 @@
 # my test file
-viktest.js
+viktest*
 .nvmrc
+.idea
 
 # Logs
 logs
