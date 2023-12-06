@@ -14,9 +14,9 @@ btnCreate.addEventListener("click", e => {
 });
 
 function createBoxes(amount) {
-  const outWrap = document.querySelector("#boxes");
+  const boxesHolder = document.querySelector("#boxes");
 
-  outWrap.textContent = "";
+  boxesHolder.textContent = "";
   let boxSize = 30;
   const elements = [];
 
@@ -30,18 +30,17 @@ function createBoxes(amount) {
     boxSize += 10;
   }
 
-  outWrap.append(...elements);
+  boxesHolder.append(...elements);
 }
 
 
 const btnDestroy = document.querySelector("button[data-destroy]");
 
-btnDestroy.addEventListener("click", destroyBoxes);
+btnDestroy.addEventListener("click", () => {
+  const boxesHolder = document.querySelector("#boxes");
+  boxesHolder.textContent = "";
+});
 
-function destroyBoxes() {
-  const outWrap = document.querySelector("#boxes");
-  outWrap.textContent = "";
-}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
